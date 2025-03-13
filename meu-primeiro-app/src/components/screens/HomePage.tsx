@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
-import { ScrollView, FlatList, Alert } from 'react-native';
-import styled from 'styled-components/native';
-import { HeaderContainer, HeaderTitle } from '../components/Header';
+import React, { useState } from "react";
+import { ScrollView, FlatList, Alert } from "react-native";
+import styled from "styled-components/native";
+import { HeaderContainer, HeaderTitle } from "../Header";
+import { Button } from "react-native";
 
 const HomeScreen = () => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [items, setItems] = useState([
-    { id: '1', text: 'Item 1' },
-    { id: '2', text: 'Item 2' },
-    { id: '3', text: 'Item 3' },
+    { id: "1", text: "Item 1" },
+    { id: "2", text: "Item 2" },
+    { id: "3", text: "Item 3" },
   ]);
 
   const addItem = () => {
     if (text.trim()) {
       setItems([...items, { id: Date.now().toString(), text }]);
-      setText('');
+      setText("");
     }
   };
 
@@ -47,7 +48,7 @@ const HomeScreen = () => {
 
         <Button
           title="Sobre"
-          onPress={() => Alert.alert('Bem-vindo', 'Aplicativo React Native')}
+          onPress={() => Alert.alert("Bem-vindo", "Aplicativo React Native")}
           color="#6c757d"
         />
       </Content>
